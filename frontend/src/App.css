@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.tag-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.tag-button.active {
+  background: white;
+  color: #667eea;
+}
+
+.add-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.loading {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  padding: 40px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  padding: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.note-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.note-tag {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.note-tag.docker { background: #2496ED; color: white; }
+.note-tag.git { background: #F05032; color: white; }
+.note-tag.linux { background: #FCC624; color: #333; }
+.note-tag.node { background: #339933; color: white; }
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn, .delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.edit-btn:hover { background: #e3f2fd; }
+.delete-btn:hover { background: #ffebee; }
+
+.note-title {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.note-content {
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 12px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.note-date {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: right;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.form-group textarea {
+  font-family: 'Courier New', monospace;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #e0e0e0;
+  color: #333;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.cancel-btn:hover {
+  background: #d0d0d0;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #667eea;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #5568d3;
+}

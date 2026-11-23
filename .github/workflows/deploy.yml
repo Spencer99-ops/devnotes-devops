@@ -1,0 +1,15 @@
+name: CI/CD DevNotes Local VM
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: [ self-hosted, linux ]
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Reconstruire et mettre à jour le conteneur local
+        run: docker compose up -d --build --no-deps devnotes-app
