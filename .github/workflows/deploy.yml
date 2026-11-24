@@ -14,5 +14,8 @@ jobs:
       - name: Récupérer le code
         uses: actions/checkout@v4
 
+      - name: S'assurer que le code est à jour
+        run: git pull origin main
+
       - name: Reconstruire et mettre à jour le conteneur local
         run: docker compose up -d --build --no-deps devnotes-app
