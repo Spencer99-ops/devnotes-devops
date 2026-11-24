@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: devnotes-app
     ports:
-      - "5111:5111"
+      - "5112:5111"
     volumes:
       - ./backend/data:/app/backend/data
     networks:

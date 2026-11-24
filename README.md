@@ -108,11 +108,11 @@ docker compose ps
 
 ### 3. Accéder aux services
 
-- **Application DevNotes** : http://192.168.56.10:5111 (ou http://localhost:5111)
+- **Application DevNotes** : http://192.168.56.10:5112 (ou http://localhost:5112)
 - **Prometheus** : http://192.168.56.10:9090 (ou http://localhost:9090)
-- **Grafana** : http://192.168.56.10:3000 (ou http://localhost:3001)
+- **Grafana** : http://192.168.56.10:3002 (ou http://localhost:3002)
   - Login: admin / admin
-- **cAdvisor** : http://192.168.56.10:8080 (ou http://localhost:8080)
+- **cAdvisor** : http://192.168.56.10:8081 (ou http://localhost:8081)
 
 ### 4. Configurer le runner GitHub Actions (Self-hosted)
 
@@ -156,10 +156,10 @@ Vérifier :
 
 | Service | Port VM | Port Host |
 |---------|---------|-----------|
-| DevNotes | 5111 | 5111 |
+| DevNotes | 5112 | 5112 |
 | Prometheus | 9090 | 9090 |
-| Grafana | 3000 | 3001 |
-| cAdvisor | 8080 | 8080 |
+| Grafana | 3002 | 3002 |
+| cAdvisor | 8081 | 8081 |
 
 ## Développement local
 
