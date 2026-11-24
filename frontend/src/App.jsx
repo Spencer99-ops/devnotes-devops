@@ -101,7 +101,7 @@ function App() {
     <div className="app">
       <header className="header">
         <h1>📝 DevNotes</h1>
-        <p className="subtitle">Gestionnaire de notes</p>
+        <p className="subtitle">Gestionnaire de notes Devops</p>
       </header>
 
       <div className="controls">
