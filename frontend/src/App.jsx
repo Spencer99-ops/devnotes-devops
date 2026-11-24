@@ -101,7 +101,7 @@ function App() {
     <div className="app">
       <header className="header">
         <h1>📝 DevNotes</h1>
-        <p className="subtitle">Gestionnaire de notes de cours DevOps - CI/CD Actif ✅</p>
+        <p className="subtitle">Gestionnaire de notes de cours DevOps - 2026-2027</p>
       </header>
 
       <div className="controls">
