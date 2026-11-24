@@ -7,6 +7,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: [ self-hosted, linux ]
+    defaults:
+      run:
+        working-directory: /home/vagrant/devnotes-devops
     steps:
       - name: Récupérer le code
         uses: actions/checkout@v4
